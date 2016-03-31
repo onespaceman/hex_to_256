@@ -1,16 +1,16 @@
 /*
  * Copyright (c) 2015 Tim Segers
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be included in
  * all copies or substantial portions of the Software.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -201,15 +201,12 @@ int main(int argc, const char *argv[])
      * output
      */
     for (int i = 1; i < argc; i++) {
-        color_in = argv[i]; 
+        color_in = argv[i];
         color_256 = hex_to_256((char *) color_in);
 
         if (color_256 != -1) {
 #ifdef t_co256
-            printf("Hex: #%s ", color_in);
-            printf("\e[7m\e[38;5;%im    \e[0m\n", color_256);
-            printf("256: %7.0i ", color_256);
-            printf("\e[7m\e[38;5;%im    \e[0m\n\n", color_256);
+            printf("%i\n", color_256);
 #else
             printf("Hex: #%s \n", color_in);
             printf("256: %7.0i\n\n", color_256);
